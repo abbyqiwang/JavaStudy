@@ -27,7 +27,7 @@ public class RunLitterSuperMarketMain {
             m.soldPrice = (1 + Math.random()) * 200;
             all[i] = m;
         }
-        //超市开门
+        
         System.out.println("超市开门了！");
 
         boolean open = true;
