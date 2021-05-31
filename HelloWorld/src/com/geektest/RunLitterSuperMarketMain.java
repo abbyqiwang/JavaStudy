@@ -27,7 +27,7 @@ public class RunLitterSuperMarketMain {
             m.soldPrice = (1 + Math.random()) * 200;
             all[i] = m;
         }
-        
+
         System.out.println("超市开门了！");
 
         boolean open = true;
@@ -69,7 +69,7 @@ public class RunLitterSuperMarketMain {
                 if (index == -1) {
                     System.out.println("欢迎下次光临！");
                     break;
-                } else if (index >= 0 && index <= all.length) {
+                } else if (index >= 0 && index < all.length) {
                     Merchandise m = all[index];
                     System.out.println("您选择的商品是" + m.name + ",该商品售价为：" + m.soldPrice + "，请问你需要多少个？");
                     int numToBuy = scanner.nextInt();
