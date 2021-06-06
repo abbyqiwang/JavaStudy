@@ -23,7 +23,7 @@ public class RunLitterSuperMarketMain {
             m.count = 200;
             m.id = "ID" + i;
             m.name = "商品" + (i + 1);
-            m.purchaseprice = Math.random() * 200;
+            m.purchasePrice = Math.random() * 200;
             m.soldPrice = (1 + Math.random()) * 200;
             all[i] = m;
         }
@@ -119,7 +119,7 @@ public class RunLitterSuperMarketMain {
             int numsold = litterSuperMarket.merchandiseSold[i];
             if (numsold > 0) {
                 double incomming = m.soldPrice * numsold;
-                double netIncomming = (m.soldPrice - m.purchaseprice) * numsold;
+                double netIncomming = (m.soldPrice - m.purchasePrice) * numsold;
                 System.out.println(m.name + "共销售了" + numsold + "个，销售额为" + incomming + "，净利润为" + netIncomming);
             }
         }

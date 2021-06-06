@@ -22,7 +22,7 @@ public class RunLitterSuperMarketMain2 {
             m.count = 200;
             m.id = "ID" + i;
             m.name = "商品" + (i + 1);
-            m.purchaseprice = Math.random() * 200;
+            m.purchasePrice = Math.random() * 200;
             m.soldPrice = (1 + Math.random()) * 200;
             all[i] = m;
         }
@@ -37,9 +37,15 @@ public class RunLitterSuperMarketMain2 {
             } else if (index >= 0 && index < all.length) {
                 System.out.println("请输入你需要购买的商品个数：");
                 Merchandise m = all[index];
+                Merchandise m0 = all[0];
                 int buyCount = scanner.nextInt();
-                double totalcost = m.buy(buyCount);
-                System.out.println("商品总价是" + totalcost);
+//                double totalCost = m.buy(buyCount);
+                double totalCost = m.buyAndPrint(buyCount, true);
+                boolean m0Bigger = m0.totalValueBigger(m);
+                boolean m1Bigger = m.isTheBiggerTotalValue(litterSuperMarket);
+                System.out.println("商品1的总价值比用户选择的要大：" + m0Bigger);
+                System.out.println(m.name + "是商品总价值最高的：" + m1Bigger);
+                System.out.println("商品总价是" + totalCost);
             } else {
                 System.out.println("您输入的商品编号有误，请重新输入。");
                 continue;
