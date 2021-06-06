@@ -9,6 +9,7 @@ public class Merchandise {
     //商品进货价
     public double purchasePrice;
 
+    // >> TODO 参数的传递
     public double buy(int countToBuy) {
         if (count < countToBuy) {
             System.out.println("库存不足");
