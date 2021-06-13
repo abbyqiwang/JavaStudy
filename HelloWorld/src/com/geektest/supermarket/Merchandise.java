@@ -8,6 +8,8 @@ public class Merchandise {
     public double soldPrice;
     //商品进货价
     public double purchasePrice;
+    //赠品
+    public Merchandise gift;
 
     // >> TODO 参数的传递
     public double buy(int countToBuy) {
@@ -56,5 +58,34 @@ public class Merchandise {
             System.out.println("剩余库存为：" + count);
         }
         return totalPrice;
+    }
+
+    public void willOutsideChangeRef(Merchandise m) {
+        m = gift;
+    }
+
+    public double getSoldPrice() {
+        return soldPrice;
+    }
+
+    public double getPurchasePrice() {
+        return purchasePrice;
+    }
+
+    public void willOutsideChangePrime(int intVal) {
+        intVal = 999999;
+    }
+
+    public void describe() {
+        System.out.println("商品名是" + name + "，商品单价为" + soldPrice
+                + "，赠品为" + gift.name + "，赠品进价为" + gift.purchasePrice);
+    }
+
+    public void changeToGift(Merchandise m1) {
+        m1.gift = gift;
+    }
+
+    public Merchandise getGift() {
+        return gift;
     }
 }
