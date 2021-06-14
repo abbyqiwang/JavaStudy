@@ -24,5 +24,19 @@ public class RunLitterSuperMarketMain4 {
             m.soldPrice = (1 + Math.random()) * 200;
             all[i] = m;
         }
+
+        System.out.println("LitterSuperMarket的方法是" + litterSuperMarket);
+        System.out.println("利润最高的是");
+        Merchandise m1 = litterSuperMarket.getBiggestProfitMerchandise();
+        m1.describeMerchandise();
+        System.out.println("利润最高的对象是" + m1);
+
+        int toBeAdd = 300;
+        if (!m1.hasEnoughCount(toBeAdd)) {
+            System.out.println("补充库存");
+            litterSuperMarket.incomingSum -= toBeAdd * m1.purchasePrice;
+            m1.addCount(toBeAdd);
+            System.out.println("当前超市剩余总收入为" + litterSuperMarket.incomingSum);
+        }
     }
 }

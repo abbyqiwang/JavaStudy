@@ -76,9 +76,19 @@ public class Merchandise {
         intVal = 999999;
     }
 
+    public double calculateProfit() {
+        double profit = soldPrice - purchasePrice;
+        return profit;
+    }
+
     public void describe() {
         System.out.println("商品名是" + name + "，商品单价为" + soldPrice
                 + "，赠品为" + gift.name + "，赠品进价为" + gift.purchasePrice);
+    }
+
+    public void describeMerchandise() {
+        System.out.println("商品名是" + name + "，商品id为" + id + "，商品数量为" + count
+                + "，商品进价为" + purchasePrice + "，商品售价为" + soldPrice + "，单个商品利润为" + calculateProfit());
     }
 
     public void changeToGift(Merchandise m1) {
@@ -87,5 +97,15 @@ public class Merchandise {
 
     public Merchandise getGift() {
         return gift;
+    }
+
+    public void addCount(int count) {
+        this.count += count;
+        System.out.println("Merchandise的addcount方法" + this);
+    }
+
+    public boolean hasEnoughCount(int count) {
+        System.out.println("Merchandise的hasEnoughCount" + this);
+        return this.count >= count;
     }
 }
